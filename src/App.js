@@ -21,9 +21,6 @@ import useUserAuthContexts from './hooks/useUserAuthContexts';
 const App = () => {
   const { authenticated } = useUserAuthContexts();
 
-  // eslint-disable-next-line no-undef
-  console.log(process.env.REACT_APP_API);
-
   return (
     <ThemeProvider theme={Themes}>
       <AppArea>

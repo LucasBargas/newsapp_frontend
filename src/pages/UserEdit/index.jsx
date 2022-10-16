@@ -13,10 +13,10 @@ import ShowPassword from '../../components/ShowPassword';
 
 const UserEdit = () => {
   const [modal, setModal] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const { deleteAccount } = useUserAuthContext();
   const { handlePost, patchLoading } = usePatchApi('/users/edit');
   const { datas, setDatas, loading } = useReqApi('/users/auth-user', true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setDatas({ ...datas, [e.target.name]: e.target.value });
