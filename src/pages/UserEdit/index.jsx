@@ -9,9 +9,11 @@ import Input from '../../components/Form/Input';
 import Textarea from '../../components/Form/Textarea';
 import Loading from '../../components/Loading';
 import Modal from '../../components/Modal';
+import ShowPassword from '../../components/ShowPassword';
 
 const UserEdit = () => {
   const [modal, setModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { deleteAccount } = useUserAuthContext();
   const { handlePost, patchLoading } = usePatchApi('/users/edit');
   const { datas, setDatas, loading } = useReqApi('/users/auth-user', true);
@@ -75,6 +77,12 @@ const UserEdit = () => {
               btnText={patchLoading ? 'Editando...' : 'Editar'}
             />
           </S.FormEditArea>
+
+          <ShowPassword
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+          />
+
           <S.DeleteAccount>
             <p>Quer deletar sua conta?</p>
             <button onClick={() => setModal(true)}>Deletar conta.</button>

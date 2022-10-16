@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import ShowPassword from '../../ShowPassword';
 import Input from '../Input';
 import SubmitButton from '../SubmitButton';
 import * as S from './styles';
@@ -66,15 +67,10 @@ const FormNews = ({
         <SubmitButton loading={loading} btnText={btnText} />
       </S.FormNewsArea>
 
-      <S.ShowPassword>
-        <label>
-          <input
-            type="checkbox"
-            onClick={() => setShowPassword(!showPassword)}
-          />
-          Visualizar senha.
-        </label>
-      </S.ShowPassword>
+      <ShowPassword
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
+      />
 
       {login && (
         <S.Redirect>
