@@ -83,8 +83,10 @@ const UserEdit = () => {
       </AppContainer>
 
       <Modal
-        title="Você tem certeza que quer deletar esta notícia?"
-        paragraph="A notícia será deletada e não poderá ser recuperada novamente."
+        title={`${
+          datas && datas.name
+        }, tem certeza que quer deletar sua conta?`}
+        paragraph="Ao confirmar esta ação, todos os seus dados serão perdidos, incluindo as notícias postadas por você."
         modal={modal}
         setModal={setModal}
         deleteAccount={deleteAccount}

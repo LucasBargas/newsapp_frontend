@@ -28,6 +28,7 @@ export const ModalContainer = styled.section`
 export const ModalArea = styled.div`
   background: ${({ theme }) => theme.colors.lightColor};
   color: ${({ theme }) => theme.colors.primaryColor};
+  max-width: 500px;
   text-align: center;
   border-radius: 6px;
   animation: ${modalAnimation} 0.4s forwards;
