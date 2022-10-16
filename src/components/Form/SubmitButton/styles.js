@@ -10,7 +10,7 @@ export const SubmitButtonContainer = styled.div`
     border-radius: 4px;
     color: ${({ theme }) => theme.colors.lightColor};
     background: ${({ theme }) => theme.colors.primaryColor};
-    opacity: .8;
+    opacity: .9;
     transition: .3s;
 
     &:hover {
