@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
-import Light from './styles/Themes/Light';
+import Themes from './styles/Themes';
 import FlashMessages from './layouts/FlashMessages';
 import AppArea from './layouts/AppArea';
 import Header from './layouts/Header';
@@ -21,54 +21,55 @@ import useUserAuthContexts from './hooks/useUserAuthContexts';
 const App = () => {
   const { authenticated } = useUserAuthContexts();
 
+  console.log(authenticated);
+
   return (
-    <ThemeProvider theme={Light}>
+    <ThemeProvider theme={Themes}>
       <AppArea>
         <Header />
         <main>
           <FlashMessages />
           <Routes>
             <Route path="/" index element={<Homepage />} />
-            <Route
-              path="/entrar"
-              element={authenticated ? <Navigate to="/" /> : <Login />}
-            />
-            <Route
-              path="/cadastrar"
-              element={authenticated ? <Navigate to="/" /> : <Register />}
-            />
-            <Route
-              path="/search"
-              element={!authenticated ? <Navigate to="/entrar" /> : <Search />}
-            />
-            <Route
-              path="/dashboard"
-              element={
-                !authenticated ? <Navigate to="/entrar" /> : <Dashboard />
-              }
-            />
-            <Route
-              path="/usuario/editar"
-              element={
-                !authenticated ? <Navigate to="/entrar" /> : <UserEdit />
-              }
-            />
-            <Route
-              path="/noticia/:id"
-              element={!authenticated ? <Navigate to="/entrar" /> : <News />}
-            />
-            <Route
-              path="/noticia/editar/:id"
-              element={
-                !authenticated ? <Navigate to="/entrar" /> : <NewsEdit />
-              }
-            />
-            <Route
-              path="/cadastrar-noticia"
-              element={
-                !authenticated ? <Navigate to="/entrar" /> : <RegisterNews />
-              }
-            />
+            <Route path="/search" element={<Search />} />
+            {!authenticated && (
+              <>
+                <Route path="/entrar" element={<Login />} />
+                <Route path="/cadastrar" element={<Register />} />
+              </>
+            )}
+            {authenticated && (
+              <>
+                <Route
+                  path="/dashboard"
+                  element={
+                    authenticated ? <Dashboard /> : <Navigate to="/entrar" />
+                  }
+                />
+                <Route
+                  path="/usuario/editar"
+                  element={
+                    authenticated ? <UserEdit /> : <Navigate to="/entrar" />
+                  }
+                />
+                <Route
+                  path="/noticia/:id"
+                  element={authenticated ? <News /> : <Navigate to="/entrar" />}
+                />
+                <Route
+                  path="/noticia/editar/:id"
+                  element={
+                    authenticated ? <NewsEdit /> : <Navigate to="/entrar" />
+                  }
+                />
+                <Route
+                  path="/cadastrar-noticia"
+                  element={
+                    authenticated ? <RegisterNews /> : <Navigate to="/entrar" />
+                  }
+                />
+              </>
+            )}
           </Routes>
         </main>
         <Footer />
