@@ -22,7 +22,7 @@ const Footer = () => {
           </p>
 
           <a
-            href="https://github.com/LucasBargas/todo_list"
+            href="https://github.com/LucasBargas/newsapp_frontend"
             target="_blank"
             rel="noopener noreferrer"
           >
