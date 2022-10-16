@@ -59,14 +59,14 @@ const UserEdit = () => {
               placeholder="Fale sobre você..."
             />
             <Input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               label="Senha"
               handleChange={handleChange}
               placeholder="Sua senha..."
             />
             <Input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="confirmpassword"
               label="Confirme sua senha"
               handleChange={handleChange}
