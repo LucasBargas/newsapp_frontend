@@ -40,3 +40,16 @@ export const Redirect = styled.div`
     }
   }
 `;
+
+export const ShowPassword = styled.div`
+  padding-top: .5rem;
+  display: inline-block;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: .325rem;
+    font-size: .875rem;
+    cursor: pointer;
+  }
+`;

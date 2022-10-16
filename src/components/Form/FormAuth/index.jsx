@@ -16,6 +16,7 @@ const FormNews = ({
   register,
 }) => {
   const [user, setUser] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -47,7 +48,7 @@ const FormNews = ({
           placeholder="Exemplo: pedro@gmail.com"
         />
         <Input
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           name="password"
           label="Senha"
           handleChange={handleChange}
@@ -55,7 +56,7 @@ const FormNews = ({
         />
         {confirmPassword && (
           <Input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             name="confirmpassword"
             label="Confirme sua senha"
             handleChange={handleChange}
@@ -64,6 +65,16 @@ const FormNews = ({
         )}
         <SubmitButton loading={loading} btnText={btnText} />
       </S.FormNewsArea>
+
+      <S.ShowPassword>
+        <label>
+          <input
+            type="checkbox"
+            onClick={() => setShowPassword(!showPassword)}
+          />
+          Visualizar senha.
+        </label>
+      </S.ShowPassword>
 
       {login && (
         <S.Redirect>
