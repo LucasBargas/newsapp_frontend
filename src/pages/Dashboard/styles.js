@@ -97,6 +97,10 @@ export const DashboardNewsActions = styled.div`
   align-items: center;
   gap: .625rem;
 
+  @media (max-width: 480px) {
+    gap: .875rem;
+  }
+
   a, svg {
     display: block;
     color: ${({ theme }) => theme.colors.primaryColor};
