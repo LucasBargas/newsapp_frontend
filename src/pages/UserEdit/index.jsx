@@ -77,7 +77,7 @@ const UserEdit = () => {
           </S.FormEditArea>
           <S.DeleteAccount>
             <p>Quer deletar sua conta?</p>
-            <button onClick={() => setModal(true)}>Deletar conta</button>
+            <button onClick={() => setModal(true)}>Deletar conta.</button>
           </S.DeleteAccount>
         </S.FormEditUser>
       </AppContainer>
