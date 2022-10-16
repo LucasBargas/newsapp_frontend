@@ -21,8 +21,6 @@ import useUserAuthContexts from './hooks/useUserAuthContexts';
 const App = () => {
   const { authenticated } = useUserAuthContexts();
 
-  console.log(authenticated);
-
   return (
     <ThemeProvider theme={Themes}>
       <AppArea>
