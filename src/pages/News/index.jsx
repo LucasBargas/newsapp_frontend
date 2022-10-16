@@ -6,6 +6,7 @@ import api from '../../utils/api';
 import AppContainer from '../../components/AppContainer';
 import NewsCard from '../../components/NewsCard';
 import Loading from '../../components/Loading';
+import Head from '../../components/Head';
 
 const News = () => {
   const { id } = useParams();
@@ -28,20 +29,23 @@ const News = () => {
   if (loading) return <Loading />;
 
   return (
-    <S.NewsContainer>
-      <AppContainer>
-        {datas && (
-          <NewsCard
-            title={datas.title}
-            body={datas.body}
-            category={datas.category}
-            author={datas.author}
-            id={datas._id}
-            handleClick={() => handleClick(datas._id)}
-          />
-        )}
-      </AppContainer>
-    </S.NewsContainer>
+    datas && (
+      <>
+        <Head title={`NewsLBS - Notícia - ${datas.title}`} />
+        <S.NewsContainer>
+          <AppContainer>
+            <NewsCard
+              title={datas.title}
+              body={datas.body}
+              category={datas.category}
+              author={datas.author}
+              id={datas._id}
+              handleClick={() => handleClick(datas._id)}
+            />
+          </AppContainer>
+        </S.NewsContainer>
+      </>
+    )
   );
 };
 

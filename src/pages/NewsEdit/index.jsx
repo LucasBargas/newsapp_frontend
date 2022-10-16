@@ -5,6 +5,7 @@ import AppContainer from '../../components/AppContainer';
 import Loading from '../../components/Loading';
 import usePatchApi from '../../hooks/usePatchApi';
 import useReqApi from '../../hooks/useReqApi';
+import Head from '../../components/Head';
 
 const NewsEdit = () => {
   const { id } = useParams();
@@ -21,17 +22,20 @@ const NewsEdit = () => {
   if (loading) return <Loading />;
 
   return (
-    <section>
-      <AppContainer>
-        <FormNews
-          newsData={datas}
-          handleSubmit={handleSubmit}
-          title={`Atualize a notícia: ${datas && datas.title}`}
-          btnText={patchLoading ? 'Atualizando...' : 'Atualizar'}
-          loading={patchLoading}
-        />
-      </AppContainer>
-    </section>
+    <>
+      <Head title={`NewsLBS - Editar notícia - ${datas && datas.title}`} />
+      <section>
+        <AppContainer>
+          <FormNews
+            newsData={datas}
+            handleSubmit={handleSubmit}
+            title={`Atualize a notícia: ${datas && datas.title}`}
+            btnText={patchLoading ? 'Atualizando...' : 'Atualizar'}
+            loading={patchLoading}
+          />
+        </AppContainer>
+      </section>
+    </>
   );
 };
 

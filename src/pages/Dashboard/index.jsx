@@ -7,6 +7,7 @@ import useReqApi from '../../hooks/useReqApi';
 import { GrView } from 'react-icons/gr';
 import { AiTwotoneEdit, AiTwotoneDelete } from 'react-icons/ai';
 import Modal from '../../components/Modal';
+import Head from '../../components/Head';
 
 const Dashboard = () => {
   const { datas, setDatas, loading } = useReqApi('/news/user', true);
@@ -23,6 +24,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <Head title="NewsLBS - Dashboard" />
       <S.DashboardContainer>
         <AppContainer>
           <S.DashboardHeader>

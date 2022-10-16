@@ -2,6 +2,7 @@ import React from 'react';
 import FormAuth from '../../components/Form/FormAuth';
 import AppContainer from '../../components/AppContainer';
 import useUserAuthContext from '../../hooks/useUserAuthContexts';
+import Head from '../../components/Head';
 
 const Login = () => {
   const { loading, login } = useUserAuthContext();
@@ -11,17 +12,20 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <AppContainer>
-        <FormAuth
-          handleSubmit={handleSubmit}
-          title="Entre em sua conta"
-          btnText={loading ? 'Entrando...' : 'Entrar'}
-          loading={loading}
-          login={true}
-        />
-      </AppContainer>
-    </section>
+    <>
+      <Head title="NewsLBS - Entrar" />
+      <section>
+        <AppContainer>
+          <FormAuth
+            handleSubmit={handleSubmit}
+            title="Entre em sua conta"
+            btnText={loading ? 'Entrando...' : 'Entrar'}
+            loading={loading}
+            login={true}
+          />
+        </AppContainer>
+      </section>
+    </>
   );
 };
 

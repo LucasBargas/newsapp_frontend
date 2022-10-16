@@ -6,6 +6,7 @@ import Loading from '../../components/Loading';
 import Showcase from '../../components/Showcase';
 import NoNews from '../../components/NoNews';
 import useReqApi from '../../hooks/useReqApi';
+import Head from '../../components/Head';
 
 const Search = () => {
   const { search } = useLocation();
@@ -18,24 +19,42 @@ const Search = () => {
 
   if (reqError)
     return (
-      <S.SearchContainer>
-        <AppContainer>
-          <h1>{reqError}</h1>
-        </AppContainer>
-      </S.SearchContainer>
+      <>
+        <Head title={`NewLBS - Search - ${reqError}`} />
+        <S.SearchContainer>
+          <AppContainer>
+            <h1>{reqError}</h1>
+          </AppContainer>
+        </S.SearchContainer>
+      </>
     );
 
-  if (!datas || datas.length === 0) return <NoNews />;
+  if (!datas || datas.length === 0)
+    return (
+      <>
+        <Head title="NewLBS - Search" />
+        <NoNews />
+      </>
+    );
 
   return (
-    <S.SearchContainer>
-      {search && (
-        <AppContainer>
-          <h1>Notícias encontradas com: {query.get('q')}</h1>
-        </AppContainer>
-      )}
-      <Showcase datas={datas} accessBtn />;
-    </S.SearchContainer>
+    <>
+      <Head
+        title={
+          query.get('q')
+            ? `NewLBS - Search - ${query.get('q')}`
+            : 'NewLBS - Search'
+        }
+      />
+      <S.SearchContainer>
+        {search && (
+          <AppContainer>
+            <h1>Notícias encontradas com: {query.get('q')}</h1>
+          </AppContainer>
+        )}
+        <Showcase datas={datas} accessBtn />;
+      </S.SearchContainer>
+    </>
   );
 };
 

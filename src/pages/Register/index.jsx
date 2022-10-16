@@ -2,6 +2,7 @@ import React from 'react';
 import FormAuth from '../../components/Form/FormAuth';
 import AppContainer from '../../components/AppContainer';
 import useUserAuthContext from '../../hooks/useUserAuthContexts';
+import Head from '../../components/Head';
 
 const Register = () => {
   const { loading, register } = useUserAuthContext();
@@ -12,20 +13,23 @@ const Register = () => {
   };
 
   return (
-    <section>
-      <AppContainer>
-        <FormAuth
-          handleSubmit={handleSubmit}
-          title="Cadastrar"
-          subtitle="Crie uma conta agora mesmo, é rápido!"
-          name={true}
-          confirmPassword={true}
-          btnText={loading ? 'Cadastrando...' : 'Cadastrar'}
-          loading={loading}
-          register={true}
-        />
-      </AppContainer>
-    </section>
+    <>
+      <Head title="NewsLBS - Cadastrar" />
+      <section>
+        <AppContainer>
+          <FormAuth
+            handleSubmit={handleSubmit}
+            title="Cadastrar"
+            subtitle="Crie uma conta agora mesmo, é rápido!"
+            name={true}
+            confirmPassword={true}
+            btnText={loading ? 'Cadastrando...' : 'Cadastrar'}
+            loading={loading}
+            register={true}
+          />
+        </AppContainer>
+      </section>
+    </>
   );
 };
 
