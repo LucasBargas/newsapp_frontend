@@ -16,6 +16,7 @@ import UserEdit from './pages/UserEdit';
 import News from './pages/News';
 import NewsEdit from './pages/NewsEdit';
 import RegisterNews from './pages/RegisterNews';
+import NotFound from './pages/NotFound';
 import useUserAuthContexts from './hooks/useUserAuthContexts';
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
                 <Route path="/cadastrar-noticia" element={<RegisterNews />} />
               </>
             )}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
