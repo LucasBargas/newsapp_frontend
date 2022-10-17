@@ -31,5 +31,5 @@ Este projeto tem como objetivo simular um portal de notícias, porém com um vis
 <img alt="Página de edição de Notícia" src="https://i.ibb.co/BnrLtjM/newslbs-news-edit.png">
 <img alt="Página de edição do usuário" src="https://i.ibb.co/g9Q9DG5/newslbs-user-edit.png">
 
-Gostaria de ver o repositório do Front end deste app?
+Gostaria de ver o repositório do Backend deste app?
 [Clique aqui](https://github.com/LucasBargas/newslbs_backend)
