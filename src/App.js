@@ -39,30 +39,10 @@ const App = () => {
             )}
             {authenticated && (
               <>
-                <Route
-                  path="/dashboard"
-                  element={
-                    authenticated ? <Dashboard /> : <Navigate to="/entrar" />
-                  }
-                />
-                <Route
-                  path="/usuario/editar"
-                  element={
-                    authenticated ? <UserEdit /> : <Navigate to="/entrar" />
-                  }
-                />
-                <Route
-                  path="/noticia/editar/:id"
-                  element={
-                    authenticated ? <NewsEdit /> : <Navigate to="/entrar" />
-                  }
-                />
-                <Route
-                  path="/cadastrar-noticia"
-                  element={
-                    authenticated ? <RegisterNews /> : <Navigate to="/entrar" />
-                  }
-                />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/usuario/editar" element={<UserEdit />} />
+                <Route path="/noticia/editar/:id" element={<NewsEdit />} />
+                <Route path="/cadastrar-noticia" element={<RegisterNews />} />
               </>
             )}
           </Routes>
