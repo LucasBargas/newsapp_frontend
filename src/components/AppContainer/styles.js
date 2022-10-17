@@ -24,11 +24,6 @@ export const AppContainerArea = styled.div`
     padding-left: 1.25rem;
   }
 
-  @media (max-width: 500px) {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
   @media (max-width: 214px) {
     padding-right: .5rem;
     padding-left: .5rem;
