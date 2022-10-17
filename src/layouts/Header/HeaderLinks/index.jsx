@@ -71,6 +71,11 @@ const HeaderLinks = ({ opened, setOpened }) => {
     <S.HeaderLinksContainer>
       <S.HeaderLinksArea opened={opened}>
         <S.HeaderLinksList>
+          <li>
+            <NavLink to="/" end onClick={() => setOpened(false)}>
+              Home
+            </NavLink>
+          </li>
           {authenticated ? (
             <>
               <li>
@@ -80,7 +85,6 @@ const HeaderLinks = ({ opened, setOpened }) => {
               </li>
               <li>
                 <NavLink
-                  end
                   to="/cadastrar-noticia"
                   onClick={() => setOpened(false)}
                 >
@@ -90,11 +94,6 @@ const HeaderLinks = ({ opened, setOpened }) => {
             </>
           ) : (
             <>
-              <li>
-                <NavLink to="/" onClick={() => setOpened(false)}>
-                  Home
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/entrar" onClick={() => setOpened(false)}>
                   Entrar
