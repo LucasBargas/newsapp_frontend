@@ -21,15 +21,16 @@ Este projeto tem como objetivo simular um portal de notícias, porém com um vis
 * React Icons.
 ### Prints do App (Versão Desktop)
 #### Páginas que não precisam de autenticação
-<img alt="Página inicial" src="https://i.ibb.co/d4066bt/newslbs-home.png">
-<img alt="Página para visualizar Notícia" src="https://i.ibb.co/wgBptzy/newslbs-news.png">
-<img alt="Página de registre-se" src="https://i.ibb.co/Dwyxv75/newslbs-register.png">
-<img alt="Página de login" src="https://i.ibb.co/0tWvfKr/newslbs-login.png">
+<img alt="Página inicial" src="https://i.ibb.co/Sr1tGh7/news-home.png">
+<img alt="Página para visualizar Notícia" src="https://i.ibb.co/ss9DCtJ/news.png">
+<img alt="Página de registre-se" src="https://i.ibb.co/ySCZSgY/news-register.png">
+<img alt="Página de login" src="https://i.ibb.co/ZNhDMSk/news-login.png">
 
 #### Páginas que precisam de autenticação
-<img alt="Página de Notícias do usuário" src="https://i.ibb.co/nwJbnRn/newslbs-dashboard.png">
-<img alt="Página de edição de Notícia" src="https://i.ibb.co/BnrLtjM/newslbs-news-edit.png">
-<img alt="Página de edição do usuário" src="https://i.ibb.co/g9Q9DG5/newslbs-user-edit.png">
+<img alt="Página de Notícias do usuário" src="https://i.ibb.co/NSKvnQ9/news-dashboard.png">
+<img alt="Página de cadastro de Notícia" src="https://i.ibb.co/kGj9pV1/news-register-news.png">
+<img alt="Página de edição de Notícia" src="https://i.ibb.co/yY6dnQy/news-edit.png">
+<img alt="Página de edição do usuário" src="https://i.ibb.co/2PjbhYn/news-edit-user.png">
 
 Gostaria de ver o repositório do Backend deste app?
 [Clique aqui](https://github.com/LucasBargas/newslbs_backend)
