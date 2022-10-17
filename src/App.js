@@ -40,7 +40,7 @@ const App = () => {
             )}
             {authenticated && (
               <>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/minhas-notícias" element={<Dashboard />} />
                 <Route path="/usuario/editar" element={<UserEdit />} />
                 <Route path="/noticia/editar/:id" element={<NewsEdit />} />
                 <Route path="/cadastrar-noticia" element={<RegisterNews />} />

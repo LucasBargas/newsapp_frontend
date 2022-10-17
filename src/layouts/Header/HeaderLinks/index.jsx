@@ -74,8 +74,8 @@ const HeaderLinks = ({ opened, setOpened }) => {
           {authenticated ? (
             <>
               <li>
-                <NavLink to="/dashboard" onClick={() => setOpened(false)}>
-                  Dashboard
+                <NavLink to="/minhas-notícias" onClick={() => setOpened(false)}>
+                  Minhas notícias
                 </NavLink>
               </li>
               <li>

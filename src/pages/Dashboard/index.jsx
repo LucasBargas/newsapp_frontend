@@ -29,7 +29,7 @@ const Dashboard = () => {
         <AppContainer>
           <S.DashboardHeader>
             <div>
-              <h1>Dashboard</h1>
+              <h1>Minhas notícias</h1>
               <p>
                 {!datas || datas.length === 0
                   ? 'Você ainda não adicionou notícias.'
