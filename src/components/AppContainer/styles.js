@@ -24,8 +24,13 @@ export const AppContainerArea = styled.div`
     padding-left: 1.25rem;
   }
 
-  @media (max-width: 214px) {
-    padding-right: .5rem;
-    padding-left: .5rem;
+  @media (max-width: 500px) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  @media (max-width: 300px) {
+    padding-right: .875rem;
+    padding-left: .875rem;
   }
 `;

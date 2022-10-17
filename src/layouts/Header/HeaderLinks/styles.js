@@ -75,7 +75,7 @@ export const HeaderLinksForm = styled.div`
   @media (max-width: 900px) {
     width: 100%;
     padding: 1.25rem 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.darkGray};
   }
 
   form {

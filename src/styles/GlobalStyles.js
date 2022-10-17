@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle`
       font-size: 14px;
     }
 
+    @media (max-width: 300px) {
+      font-size: 13px;
+    }
+
     body {
       background: ${({ theme }) => theme.colors.lightGray};
       font-family: Helvetica, sans-serif;
