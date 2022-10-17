@@ -30,6 +30,10 @@ const App = () => {
           <Routes>
             <Route path="/" index element={<Homepage />} />
             <Route path="/search" element={<Search />} />
+            <Route
+              path="/noticia/:id"
+              element={authenticated ? <News /> : <Navigate to="/entrar" />}
+            />
             {!authenticated && (
               <>
                 <Route path="/entrar" element={<Login />} />
@@ -49,10 +53,6 @@ const App = () => {
                   element={
                     authenticated ? <UserEdit /> : <Navigate to="/entrar" />
                   }
-                />
-                <Route
-                  path="/noticia/:id"
-                  element={authenticated ? <News /> : <Navigate to="/entrar" />}
                 />
                 <Route
                   path="/noticia/editar/:id"
