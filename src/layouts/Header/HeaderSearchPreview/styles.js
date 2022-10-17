@@ -11,6 +11,15 @@ export const HeaderSearchPreviewContainer = styled.div`
   z-index: 10001;
   box-shadow: ${({ theme }) => theme.colors.shadow};
 
+  p {
+    color: ${({ theme }) => theme.colors.primaryColor};
+    padding: .625rem 0;
+
+    @media (max-width: 900px) {
+      padding: .75rem 0;
+    }
+  }
+
   ul {
     display: block;
 
@@ -20,7 +29,7 @@ export const HeaderSearchPreviewContainer = styled.div`
       a {
         display: block;
         width: 80%;
-        color: #222222;
+        color: ${({ theme }) => theme.colors.primaryColor};
         padding: .625rem 0;
 
         @media (max-width: 900px) {
@@ -34,7 +43,7 @@ export const HeaderSearchPreviewContainer = styled.div`
 export const HeaderSearchPreviewErr = styled.span`
   display: block;
   position: static !important;
-  color: #222222 !important;
+  color: ${({ theme }) => theme.colors.primaryColor} !important;
   font-size: .875rem !important;
   padding: .625rem 0;
   width: 85%;
@@ -51,6 +60,6 @@ export const HeaderSearchPreviewCloseBtn = styled.button`
   padding: .325rem;
   font-size: 1.625rem;
   background: transparent;
-  color: #222222;
+  color: ${({ theme }) => theme.colors.primaryColor};
   z-index: 1002;
 `;
