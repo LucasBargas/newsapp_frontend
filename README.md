@@ -1,71 +1,35 @@
-# Getting Started with Create React App
+## Projeto NewsLBS
+O projeto **NewsLBS** foi desenvolvido por mim, Lucas Bargas, com base em um layout que encontrei na web.
+Contruí uma API Rest para ser consumida no Front end. Todos os testes de rotas foram feitos com o Postman.
+Este projeto tem como objetivo simular um portal de notícias, porém com um visual mais simples.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Link para visualizar o projeto
+<https://newsapp-lbs.vercel.app/>
 
-## Available Scripts
+### Principais recursos do App
+* Registo, login e logout de usuário;
+* Edição de usuário, somente autenticado;
+* Registro, edição e exclusão de Notícia, somente autenticado;
+* A edição ou exlusão só pode ser feita por quem postou a notícia.
 
-In the project directory, you can run:
+### Tecnologias utilizadas
+#### Front end
+* Reactjs;
+* Styled components;
+* Hooks e Context API;
+* Axios para o consumo da API Rest desenvolvida no Backend;
+* React Icons.
+### Prints do App (Versão Desktop)
+#### Páginas que não precisam de autenticação
+<img alt="Página inicial" src="https://i.ibb.co/d4066bt/newslbs-home.png">
+<img alt="Página para visualizar Notícia" src="https://i.ibb.co/wgBptzy/newslbs-news.png">
+<img alt="Página de registre-se" src="https://i.ibb.co/Dwyxv75/newslbs-register.png">
+<img alt="Página de login" src="https://i.ibb.co/0tWvfKr/newslbs-login.png">
 
-### `npm start`
+#### Páginas que precisam de autenticação
+<img alt="Página de Notícias do usuário" src="https://i.ibb.co/nwJbnRn/newslbs-dashboard.png">
+<img alt="Página de edição de Notícia" src="https://i.ibb.co/BnrLtjM/newslbs-news-edit.png">
+<img alt="Página de edição do usuário" src="https://i.ibb.co/g9Q9DG5/newslbs-user-edit.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# newsapp_frontend
+Gostaria de ver o repositório do Front end deste app?
+[Clique aqui](https://github.com/LucasBargas/newslbs_backend)
