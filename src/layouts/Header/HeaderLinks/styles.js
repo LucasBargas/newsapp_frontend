@@ -75,6 +75,7 @@ export const HeaderLinksForm = styled.div`
   @media (max-width: 900px) {
     width: 100%;
     padding: 1.25rem 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   }
 
   form {
@@ -88,7 +89,7 @@ export const HeaderLinksForm = styled.div`
       @media (max-width: 900px) {
         width: 100%;
         border-radius: 4px;
-        padding: .75rem 4.25rem .75rem .75rem;
+        padding: 1rem 4.25rem 1rem .75rem;
       }
     }
 
@@ -241,6 +242,7 @@ export const ClearInputButton = styled.button`
 
   @media (max-width: 900px) {
     right: 2.5rem;
+    font-size: 1.325rem;
   }
 `;
 
