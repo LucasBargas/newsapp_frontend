@@ -91,6 +91,11 @@ const HeaderLinks = ({ opened, setOpened }) => {
           ) : (
             <>
               <li>
+                <NavLink to="/" onClick={() => setOpened(false)}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/entrar" onClick={() => setOpened(false)}>
                   Entrar
                 </NavLink>
