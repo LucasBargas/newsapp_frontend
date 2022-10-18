@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Head title="NewsLBS - Dashboard" />
+      <Head title="NewsLBS - Minhas notícias" />
       <S.DashboardContainer>
         <AppContainer>
           <S.DashboardHeader>
