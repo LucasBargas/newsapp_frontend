@@ -15,7 +15,7 @@ const Search = () => {
     search ? `/news/search${search}` : '/news',
   );
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title="NewLBS - Search" />;
 
   if (reqError)
     return (
@@ -38,23 +38,25 @@ const Search = () => {
     );
 
   return (
-    <>
-      <Head
-        title={
-          query.get('q')
-            ? `NewLBS - Search - ${query.get('q')}`
-            : 'NewLBS - Search'
-        }
-      />
-      <S.SearchContainer>
-        {search && (
-          <AppContainer>
-            <h1>Notícias encontradas com: {query.get('q')}</h1>
-          </AppContainer>
-        )}
-        <Showcase datas={datas} accessBtn />;
-      </S.SearchContainer>
-    </>
+    datas && (
+      <>
+        <Head
+          title={
+            query.get('q')
+              ? `NewLBS - Search - ${query.get('q')}`
+              : 'NewLBS - Search'
+          }
+        />
+        <S.SearchContainer>
+          {search && (
+            <AppContainer>
+              <h1>Notícias encontradas com: {query.get('q')}</h1>
+            </AppContainer>
+          )}
+          <Showcase datas={datas} accessBtn />;
+        </S.SearchContainer>
+      </>
+    )
   );
 };
 

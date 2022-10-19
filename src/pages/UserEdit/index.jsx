@@ -28,7 +28,7 @@ const UserEdit = () => {
     handlePost(datas);
   };
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title="NewsLBS - Editar usuário" />;
 
   return (
     <>

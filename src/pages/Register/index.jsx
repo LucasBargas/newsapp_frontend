@@ -7,10 +7,7 @@ import Head from '../../components/Head';
 const Register = () => {
   const { loading, register } = useUserAuthContext();
 
-  const handleSubmit = async (user) => {
-    register(user);
-    console.log(user);
-  };
+  const handleSubmit = async (user) => register(user);
 
   return (
     <>

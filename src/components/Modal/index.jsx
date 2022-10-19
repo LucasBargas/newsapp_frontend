@@ -37,7 +37,7 @@ const Modal = ({
       })
       .then((response) => {
         setDatas(datas.filter((data) => data._id !== newsId));
-        navigate('/dashboard');
+        navigate('/minhas-noticias');
         return response.data;
       })
       .catch((err) => {

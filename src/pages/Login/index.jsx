@@ -7,9 +7,7 @@ import Head from '../../components/Head';
 const Login = () => {
   const { loading, login } = useUserAuthContext();
 
-  const handleSubmit = async (user) => {
-    login(user);
-  };
+  const handleSubmit = async (user) => login(user);
 
   return (
     <>

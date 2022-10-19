@@ -7,10 +7,7 @@ import Head from '../../components/Head';
 const RegisterNews = () => {
   const { handlePost, postLoading } = usePostApi('/news', '/');
 
-  const handleSubmit = (news) => {
-    console.log(news);
-    handlePost(news);
-  };
+  const handleSubmit = (news) => handlePost(news);
 
   return (
     <>

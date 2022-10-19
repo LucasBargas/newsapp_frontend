@@ -8,17 +8,25 @@ import Head from '../../components/Head';
 const Homepage = () => {
   const { datas, loading } = useReqApi('/news');
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title="NewsLBS" />;
 
-  if (!datas || datas.length === 0) return <NoNews />;
+  if (!datas || datas.length === 0)
+    return (
+      <>
+        <Head title="NewsLBS" />
+        <NoNews />;
+      </>
+    );
 
   return (
-    <>
-      <Head title="NewsLBS" />
-      <section>
-        <Showcase datas={datas} accessBtn />
-      </section>
-    </>
+    datas && (
+      <>
+        <Head title="NewsLBS" />
+        <section>
+          <Showcase datas={datas} accessBtn />
+        </section>
+      </>
+    )
   );
 };
 

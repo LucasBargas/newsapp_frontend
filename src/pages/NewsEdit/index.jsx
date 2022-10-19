@@ -15,11 +15,9 @@ const NewsEdit = () => {
     `/noticia/${id}`, // navigate path if the post ok
   );
 
-  const handleSubmit = async (datas) => {
-    handlePost(datas);
-  };
+  const handleSubmit = async (datas) => handlePost(datas);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title="NewsLBS - Editar notícia" />;
 
   return (
     <>

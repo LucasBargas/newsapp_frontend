@@ -26,7 +26,7 @@ const News = () => {
     }
   };
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title="NewsLBS - Notícia" />;
 
   return (
     datas && (
