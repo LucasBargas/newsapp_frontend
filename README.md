@@ -1,7 +1,5 @@
 ## Projeto NewsLBS
-O projeto **NewsLBS** foi desenvolvido por mim, Lucas Bargas, com base em um layout que encontrei na web.
-Contruí uma API Rest para ser consumida no Front end. Todos os testes de rotas foram feitos com o Postman.
-Este projeto tem como objetivo simular um portal de notícias, porém com um visual mais simples.
+O projeto **NewsLBS** foi desenvolvido por mim, Lucas Bargas, com base em um layout que encontrei na web. Este projeto tem como objetivo simular um portal de notícias, porém com um visual mais simples.
 
 ### Link para visualizar o projeto
 <https://newsapp-lbs.vercel.app/>
