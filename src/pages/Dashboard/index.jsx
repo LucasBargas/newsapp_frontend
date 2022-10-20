@@ -10,6 +10,7 @@ import Modal from '../../components/Modal';
 import Head from '../../components/Head';
 
 const Dashboard = () => {
+  const [pageTitle] = useState('NewsLBS - Minhas notícias');
   const { datas, setDatas, loading } = useReqApi('/news/user', true);
   const [modal, setModal] = useState(false);
   const [newsId, setNewsId] = useState(undefined);
@@ -20,11 +21,11 @@ const Dashboard = () => {
     setModal(true);
   };
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading title={pageTitle} />;
 
   return (
     <>
-      <Head title="NewsLBS - Minhas notícias" />
+      <Head title={pageTitle} />
       <S.DashboardContainer>
         <AppContainer>
           <S.DashboardHeader>

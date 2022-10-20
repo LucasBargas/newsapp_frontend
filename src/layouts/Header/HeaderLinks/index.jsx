@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './styles';
 import { NavLink, useNavigate } from 'react-router-dom';
+import useUserAuthContext from '../../../hooks/useUserAuthContexts';
+import useAuth from '../../../hooks/useAuth';
 import { FaInstagramSquare, FaFacebookSquare } from 'react-icons/fa';
 import { BiSearch, BiUser } from 'react-icons/bi';
 import { IoClose } from 'react-icons/io5';
 import { MdOutlineLogout } from 'react-icons/md';
 import HeaderSearchPreview from '../HeaderSearchPreview';
-import useUserAuthContext from '../../../hooks/useUserAuthContexts';
 
 const HeaderLinks = ({ opened, setOpened }) => {
-  const { authenticated, logout } = useUserAuthContext();
+  const { logout } = useAuth();
+  const { authenticated } = useUserAuthContext();
   const [input, setInput] = useState('');
   const [inputEmpty, setInputEmpty] = useState(false);
   const [searchPreview, setSearchPreview] = useState(false);

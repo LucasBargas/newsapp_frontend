@@ -1,11 +1,11 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 import FormAuth from '../../components/Form/FormAuth';
 import AppContainer from '../../components/AppContainer';
-import useUserAuthContext from '../../hooks/useUserAuthContexts';
 import Head from '../../components/Head';
 
 const Login = () => {
-  const { loading, login } = useUserAuthContext();
+  const { loading, login } = useAuth();
 
   const handleSubmit = async (user) => login(user);
 

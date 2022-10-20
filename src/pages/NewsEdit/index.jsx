@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import FormNews from '../../components/Form/FormNews';
 import AppContainer from '../../components/AppContainer';
 import Loading from '../../components/Loading';
@@ -8,6 +8,7 @@ import useReqApi from '../../hooks/useReqApi';
 import Head from '../../components/Head';
 
 const NewsEdit = () => {
+  const [pageTitle] = useState('NewsLBS - Editar notícia');
   const { id } = useParams();
   const { datas, loading } = useReqApi(`/news/unique/${id}`);
   const { handlePost, patchLoading } = usePatchApi(
@@ -17,11 +18,11 @@ const NewsEdit = () => {
 
   const handleSubmit = async (datas) => handlePost(datas);
 
-  if (loading) return <Loading title="NewsLBS - Editar notícia" />;
+  if (loading) return <Loading title={pageTitle} />;
 
   return (
     <>
-      <Head title={`NewsLBS - Editar notícia - ${datas && datas.title}`} />
+      <Head title={`${pageTitle} - ${datas && datas.title}`} />
       <section>
         <AppContainer>
           <FormNews

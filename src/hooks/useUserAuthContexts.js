@@ -2,10 +2,9 @@ import { useContext } from 'react';
 import { UserCtx } from '../contexts/UserAuthContext';
 
 const useUserAuthContext = () => {
-  const { loading, register, authenticated, login, logout, deleteAccount } =
-    useContext(UserCtx);
+  const { authenticated, setAuthenticated } = useContext(UserCtx);
 
-  return { loading, register, authenticated, login, logout, deleteAccount };
+  return { authenticated, setAuthenticated };
 };
 
 export default useUserAuthContext;

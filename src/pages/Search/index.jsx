@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import * as S from './styles';
 import AppContainer from '../../components/AppContainer';
@@ -9,18 +9,19 @@ import useReqApi from '../../hooks/useReqApi';
 import Head from '../../components/Head';
 
 const Search = () => {
+  const [pageTitle] = useState('NewLBS - Search');
   const { search } = useLocation();
   const query = new URLSearchParams(search);
   const { datas, reqError, loading } = useReqApi(
     search ? `/news/search${search}` : '/news',
   );
 
-  if (loading) return <Loading title="NewLBS - Search" />;
+  if (loading) return <Loading title={pageTitle} />;
 
   if (reqError)
     return (
       <>
-        <Head title={`NewLBS - Search - ${reqError}`} />
+        <Head title={`${pageTitle} - ${reqError}`} />
         <S.SearchContainer>
           <AppContainer>
             <h1>{reqError}</h1>
@@ -32,7 +33,7 @@ const Search = () => {
   if (!datas || datas.length === 0)
     return (
       <>
-        <Head title="NewLBS - Search" />
+        <Head title={pageTitle} />
         <NoNews />
       </>
     );
@@ -42,9 +43,7 @@ const Search = () => {
       <>
         <Head
           title={
-            query.get('q')
-              ? `NewLBS - Search - ${query.get('q')}`
-              : 'NewLBS - Search'
+            query.get('q') ? `${pageTitle} - ${query.get('q')}` : `${pageTitle}`
           }
         />
         <S.SearchContainer>

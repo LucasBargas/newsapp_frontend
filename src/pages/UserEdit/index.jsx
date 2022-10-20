@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import * as S from './styles';
-import AppContainer from '../../components/AppContainer';
+import useAuth from '../../hooks/useAuth';
 import usePatchApi from '../../hooks/usePatchApi';
 import useReqApi from '../../hooks/useReqApi';
-import useUserAuthContext from '../../hooks/useUserAuthContexts';
+import AppContainer from '../../components/AppContainer';
 import SubmitButton from '../../components/Form/SubmitButton';
 import Input from '../../components/Form/Input';
 import Textarea from '../../components/Form/Textarea';
@@ -13,8 +13,9 @@ import ShowPassword from '../../components/ShowPassword';
 import Head from '../../components/Head';
 
 const UserEdit = () => {
+  const [pageTitle] = useState('NewsLBS - Editar usuário');
+  const { deleteAccount } = useAuth();
   const [modal, setModal] = useState(false);
-  const { deleteAccount } = useUserAuthContext();
   const { handlePost, patchLoading } = usePatchApi('/users/edit');
   const { datas, setDatas, loading } = useReqApi('/users/auth-user', true);
   const [showPassword, setShowPassword] = useState(false);
@@ -28,11 +29,11 @@ const UserEdit = () => {
     handlePost(datas);
   };
 
-  if (loading) return <Loading title="NewsLBS - Editar usuário" />;
+  if (loading) return <Loading title={pageTitle} />;
 
   return (
     <>
-      <Head title={`NewsLBS - Editar usuário - ${datas && datas.name}`} />
+      <Head title={`${pageTitle} - ${datas && datas.name}`} />
       <section>
         <AppContainer>
           <S.FormEditUser>

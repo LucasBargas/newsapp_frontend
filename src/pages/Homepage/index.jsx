@@ -15,7 +15,7 @@ const Homepage = () => {
     return (
       <>
         <Head title={pageTitle} />
-        <NoNews />;
+        <NoNews />
       </>
     );
 

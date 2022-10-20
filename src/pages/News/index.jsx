@@ -9,6 +9,7 @@ import Loading from '../../components/Loading';
 import Head from '../../components/Head';
 
 const News = () => {
+  const [pageTitle] = useState('NewsLBS - Notícia');
   const { id } = useParams();
   const { datas, loading } = useReqApi(`/news/unique/${id}`);
   const navigate = useNavigate();
@@ -26,12 +27,12 @@ const News = () => {
     }
   };
 
-  if (loading) return <Loading title="NewsLBS - Notícia" />;
+  if (loading) return <Loading title={pageTitle} />;
 
   return (
     datas && (
       <>
-        <Head title={`NewsLBS - Notícia - ${datas.title}`} />
+        <Head title={`${pageTitle} - ${datas.title}`} />
         <S.NewsContainer>
           <AppContainer>
             <NewsCard

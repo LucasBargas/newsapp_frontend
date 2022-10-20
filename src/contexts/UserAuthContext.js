@@ -1,15 +1,12 @@
-import React, { createContext } from 'react';
-import useAuth from '../hooks/useAuth';
+import React, { createContext, useState } from 'react';
 
 export const UserCtx = createContext();
 
 export const UserProvider = ({ children }) => {
-  const { loading, register, authenticated, login, logout, deleteAccount } =
-    useAuth();
+  const [authenticated, setAuthenticated] = useState(false);
+
   return (
-    <UserCtx.Provider
-      value={{ loading, register, authenticated, login, logout, deleteAccount }}
-    >
+    <UserCtx.Provider value={{ authenticated, setAuthenticated }}>
       {children}
     </UserCtx.Provider>
   );

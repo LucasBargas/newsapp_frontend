@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import authUser from '../helpers/authUser';
 import api from '../utils/api';
 import useFlashMessages from './useFlashMessages';
+import useUserAuthContext from './useUserAuthContexts';
 
 const useAuth = () => {
+  const { setAuthenticated } = useUserAuthContext();
   const [loading, setLoading] = useState(false);
-  const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
   const { setFlashMessage } = useFlashMessages();
 
@@ -17,7 +18,7 @@ const useAuth = () => {
       setAuthenticated(true);
       return;
     }
-  }, []);
+  }, [setAuthenticated]);
 
   const register = async (user) => {
     let msgText = 'Cadastro realizado com sucesso. Bem vindo(a)!';
@@ -67,17 +68,23 @@ const useAuth = () => {
     const msgText = 'Você desconectou com sucesso. Até logo!';
     const msgType = 'success';
 
-    setAuthenticated(false);
-    localStorage.removeItem('apiToken');
-    api.defaults.headers.Authorization = undefined;
-    navigate('/entrar');
-
-    setFlashMessage(msgText, msgType);
+    try {
+      setAuthenticated(false);
+      localStorage.removeItem('apiToken');
+      api.defaults.headers.Authorization = undefined;
+      navigate('/entrar');
+    } catch (error) {
+      console.log(error);
+      return error;
+    } finally {
+      setFlashMessage(msgText, msgType);
+    }
   };
 
   const deleteAccount = async () => {
     const deleteDatas = async () => {
       let msgType = 'success';
+      setLoading(true);
 
       const data = await api
         .delete('/users/delete', {
@@ -91,12 +98,13 @@ const useAuth = () => {
           setAuthenticated(false);
           localStorage.removeItem('apiToken');
           api.defaults.headers.Authorization = undefined;
+          setLoading(false);
           navigate('/entrar');
           return response.data;
         })
         .catch((err) => {
           msgType = 'error';
-
+          setLoading(false);
           return err.response.data;
         });
 
@@ -109,7 +117,6 @@ const useAuth = () => {
   return {
     loading,
     register,
-    authenticated,
     login,
     logout,
     deleteAccount,

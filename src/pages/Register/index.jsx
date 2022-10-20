@@ -1,11 +1,11 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 import FormAuth from '../../components/Form/FormAuth';
 import AppContainer from '../../components/AppContainer';
-import useUserAuthContext from '../../hooks/useUserAuthContexts';
 import Head from '../../components/Head';
 
 const Register = () => {
-  const { loading, register } = useUserAuthContext();
+  const { loading, register } = useAuth();
 
   const handleSubmit = async (user) => register(user);
 
