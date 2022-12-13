@@ -8,7 +8,7 @@ O projeto **NewsLBS** foi desenvolvido por mim, Lucas Bargas, com base em um lay
 * Registo, login e logout de usuário;
 * Edição de usuário, somente autenticado;
 * Registro, edição e exclusão de Notícia, somente autenticado;
-* A edição ou exlusão só pode ser feita por quem postou a notícia.
+* A edição ou exclusão só pode ser feita por quem postou a notícia.
 
 ### Tecnologias utilizadas
 #### Front end
