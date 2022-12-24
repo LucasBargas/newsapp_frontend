@@ -12,7 +12,7 @@ const Footer = () => {
             Esta aplicação web foi desenvolvida por{' '}
             <a
               target="_blank"
-              href="https://projetoslucasbargas.com/"
+              href="https://projetoslucasbargas.vercel.app/"
               rel="noopener noreferrer"
             >
               Lucas Bargas
