@@ -11,13 +11,6 @@ O projeto **NewsLBS** foi desenvolvido por mim, Lucas Bargas, com base em um lay
 * A edição ou exclusão só pode ser feita por quem postou a notícia.
 
 ### Tecnologias utilizadas
-#### Front end
-* Reactjs;
-* Styled components;
-* Hooks e Context API;
-* Axios para o consumo da API Rest desenvolvida no Backend;
-* React Icons.
-
 <table>
   <tr>
     <td>Reactjs</td>
