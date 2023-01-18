@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <S.FooterContainer>
       <AppContainer>
-        <div>
+        <S.FooterWrapper>
           <p>
             Esta aplicação web foi desenvolvida por{' '}
             <a
@@ -21,14 +21,23 @@ const Footer = () => {
             própria.
           </p>
 
-          <a
-            href="https://github.com/LucasBargas/newsapp_frontend"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Clique aqui para visualizar o repositório no GitHub
-          </a>
-        </div>
+          <div>
+            <a
+              href="https://github.com/LucasBargas/newslbs_frontend"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clique aqui para visualizar o repositório do Front End no GitHub
+            </a>
+            <a
+              href="https://github.com/LucasBargas/newslbs_backend"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clique aqui para visualizar o repositório do Backend no GitHub
+            </a>
+          </div>
+        </S.FooterWrapper>
       </AppContainer>
     </S.FooterContainer>
   );
